@@ -1,26 +1,25 @@
 import caesar_cipher
 
-#plaintext = input("Please enter plaintext: ")
-#shift = input("Enter shift key: ")
-
-#print(caesar_cipher.encrypt(plaintext, shift))
-
+# Encrypt 1
 try:
-    assert caesar_cipher.encrypt("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 23) == "XYZABCDEFGHIJKLMNOPQRSTUVW"
+    assert caesar_cipher.cipher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 23, 0) == "XYZABCDEFGHIJKLMNOPQRSTUVW"
 except AssertionError:
-    print("Error in test case 1")
+    print("Error in Encrypt test case 1")
 
+# Encrypt 2
 try:
-    assert caesar_cipher.encrypt("ATTACKATONCE", 4) == "EXXEGOEXSRGI"
+    assert caesar_cipher.cipher("ATTACKATONCE", 4, 0) == "EXXEGOEXSRGI"
 except AssertionError:
-    print("Error in test case 2")
+    print("Error in Encrypt test case 2")
 
+# Decrypt 1
 try:
-    assert caesar_cipher.decrypt("XYZABCDEFGHIJKLMNOPQRSTUVW", 23) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    assert caesar_cipher.cipher("XYZABCDEFGHIJKLMNOPQRSTUVW", 23, 1) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 except AssertionError:
-    print("Error in test case 1")
+    print("Error in Decrypt test case 1")
 
+# Decrypt 2
 try:
-    assert caesar_cipher.decrypt("EXXEGOEXSRGI", 4) == "ATTACKATONCE"
+    assert caesar_cipher.cipher("EXXEGOEXSRGI", 4, 1) == "ATTACKATONCE"
 except AssertionError:
-    print("Error in test case 2")
+    print("Error in Decrypt test case 2")
